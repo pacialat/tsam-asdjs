@@ -98,7 +98,16 @@ function  ex_3_F(myArray){
     return (tot / myArray.length);
 }
 
-/*Esercizio 10
+/*
+Esercizio 4
+Dato un intervallo [a, b] con a e b due interi positivi, restituire la somma di tutti i numeri
+compresi all’interno dell’intervallo, estremi inclusi. Nel caso che b fosse minore di a,
+calcolare la somma nell’intervallo [b,a]
+Crea una funzione che crea un array da A a B, poi  utilizzando reduce esegui la somma
+/*
+
+
+Esercizio 10
 Dati due interi a, n maggiori di 0, scrivere un algoritmo che crea un lista di n elementi
 contenenti a.
 */
@@ -144,11 +153,5 @@ dispari precedano nello stesso ordine tutti gli elementi pari.
 */
 
 function ex_11_F(myArray){
-   myArray.forEach( x => {
-       if (x % 2 == 0){
-           myArray.push(x);
-           myArray.shift();
-       }
-   });
-   return myArray;  return myArray;
+    return myArray.filter(x => x % 2 != 0).concat(myArray.filter(x => x % 2 == 0));
 }
