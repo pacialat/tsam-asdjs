@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 function prova(){
     return ('ciao');
 }
-=======
->>>>>>> 35ed00fadcd5bfc2a8e33e132fff61050f25dcbd
 /*
 Esercizio 1
 Dato un array di interi, 
@@ -158,7 +155,3 @@ dispari precedano nello stesso ordine tutti gli elementi pari.
 function ex_11_F(myArray){
     return myArray.filter(x => x % 2 != 0).concat(myArray.filter(x => x % 2 == 0));
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 35ed00fadcd5bfc2a8e33e132fff61050f25dcbd

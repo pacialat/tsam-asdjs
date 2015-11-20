@@ -137,10 +137,7 @@ function ex_5_R(a, b){
 Si calcoli la divisione e il resto della divisione tra due numeri a, b maggiori a zero, tramite
 l’utilizzo dei soli operatori somma e sottrazione.
 */
-<<<<<<< HEAD
 
-=======
->>>>>>> 35ed00fadcd5bfc2a8e33e132fff61050f25dcbd
 function ex_6_I(a, b){
     if ((a && b) > 0){
         for (var i = 0; a >= b; i++){
