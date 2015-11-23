@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Esercizio 1
 Dato un array di interi, 
@@ -7,10 +8,16 @@ restituire la loro somma fino a che non viene ritrovato un valore negativo
 Array.prototype.sumAllWhilePos = function(){
     var tot = 0;
     this.every( x =>{
+=======
+Array.prototype.ex_1 = function(){
+    var tot = 0;
+    this.every( x =>
+>>>>>>> 85a154bf00cea6f5314f701314583b6dcbc9f6d8
         if (x > 0) {
             tot += x;
         }
         return x > 0;
+<<<<<<< HEAD
     });
     return tot;
 }
@@ -23,10 +30,18 @@ Dato un array, calcolarne la media
 */
 
 Array.prototype.average = function (){
+=======
+    );
+    return tot;
+};
+
+Array.prototype.ex_3 = function (){
+>>>>>>> 85a154bf00cea6f5314f701314583b6dcbc9f6d8
     var tot = 0;
     this.forEach(x => {
         tot += x;
     });
+<<<<<<< HEAD
     return (tot / this.length);
 }
 
@@ -54,3 +69,11 @@ Queue.prototype.dequeue = function (e){
     return this.myArray.pop();
 }
 
+=======
+    return (tot / myArray.length);
+}
+
+Array.prototype.ex_11 = function () {
+    return this.filter(x => x % 2 != 0).concat(this.filter(x => x % 2 == 0));
+}
+>>>>>>> 85a154bf00cea6f5314f701314583b6dcbc9f6d8

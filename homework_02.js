@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+function prova(){
+    return ('ciao');
+}
+>>>>>>> 85a154bf00cea6f5314f701314583b6dcbc9f6d8
 /*
 Esercizio 1
 Dato un array di interi, 
