@@ -1,6 +1,3 @@
-function prova(){
-    return ('ciao');
-}
 /*
 Esercizio 1
 Dato un array di interi, 
