@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function CircularQueue(n){
 	this.myarray = [];
 	this.coda = 0;
@@ -42,28 +41,3 @@ CircularQueue.prototype.isEmpty = function(){
 CircularQueue.prototype.size = function(){
 	return this.dim;
 }
-=======
-function Queue() {
-    this.myarray = [];
-}
-
-Queue.prototype.enqueue = function(e) {
-    this.myarray.unshift(e);
-} 
-
-Queue.prototype.dequeue = function() {
-    return this.myarray.pop();
-} 
-
-Queue.prototype.front = function() {
-    return this.myarray[this.myarray.length - 1];
-} 
-
-Queue.prototype.isEmpty = function() {
-    return this.size() == 0;
-} 
-
-Queue.prototype.size = function() {
-    return this.myarray.length;
-} 
->>>>>>> 45a6226b755f8c3f0b43463b5c48d5d72536dfe5
