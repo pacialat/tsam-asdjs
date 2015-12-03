@@ -12,6 +12,7 @@ function ex_1_I(myArray) {
         }
         tot += x; 
     }
+    return tot;
 }
 
 function ex_1_R(myArray) {
@@ -147,6 +148,28 @@ function ex_6_I(a, b){
     }
 }
 
+function divRic(a, b, q){
+    
+    if(b === 0){
+        
+        return('error');
+    }else{
+        if(a >= b){
+            r = a - b;
+            q++;
+            return divRic(a - b, b, q);
+        } else {
+			v = [q,r];
+            return (v);
+        }
+    }
+
+}
+function ex_6_R(a, b){
+	q = 0;
+	return divRic(a, b, q);
+}
+
 /*Esercizio 7
 Si calcoli la potenza (x^y) di due numeri x y maggiori o uguali a zero, tramite l’utilizzo dei soli
 operatori somma, sottrazione e della funzione mult.
@@ -161,19 +184,56 @@ function ex_7_I(a, b){
     }
 }
 
+function ex_7_R(a,b){
+    if(b === 0){
+        return 1;
+    } else {
+        return (ex_5_R(a, ex_7_R(a, b - 1)));
+    }
+}
+
 /*Esercizio 8
 Dato un array contenente n^2 elementi, scrivere un algoritmo che permetta di inserire tutti gli
 oggetti in un array bidimensionale n x n.
 */
 function ex_8_I(myArray){
-    a = [[0],[0]];
-    for (var i = 0; i < Math.sqrt(myArray.length); i++){
-        for (var j = 0; j < Math.sqrt(myArray.length); j++){
-            a[[i],[j]] = myArray[i];
-            a[[i],[j]] = myArray[j];
+var n = Math.sqrt(myArray.length);
+    var resarray = []
+    var row = []
+    for(var i = 0; i < myArray.length; ++i) {
+        row[row.length] = myArray[i];
+        if (row.length == n) {
+            resarray.push(row);
+            row = [];
         }
     }
-    return a;
+    return resarray;
+}
+
+
+function magic(myarray, matrix) {
+    matrix.unshift(myarray);
+    return matrix;
+}
+
+
+function bidimensionaleRInternal(myarray, n) {
+    if (myarray.length == n) {
+        return [myarray];
+    } else {
+        return magic(myarray.slice(0, n), 
+                     bidimensionaleRInternal(myarray.slice(n), n));
+    }
+}
+
+function bidimensionaleR(myarray) {
+    return bidimensionaleRInternal(myarray, Math.sqrt(myarray.length));
+}
+
+
+
+function ex_8_R(vett){
+	return bidimensionaleR(vett);
 }
 
 /*Esercizio 9
@@ -189,6 +249,7 @@ function ex_9_I(myArray){
     return myArray;
 }
 
+
 /*Esercizio 10
 Dati due interi a, n maggiori di 0, scrivere un algoritmo che crea un lista di n elementi
 contenenti a.
@@ -203,17 +264,54 @@ function ex_10_I(a, n){
     }
 }
 
+function replicateRicorsiva(vett, num1, num2){
+    if(num2 != 0){
+        vett.push(num1);
+        return replicateRicorsiva(vett, num1, num2 - 1);
+    } else {
+        
+        return vett;
+    }
+}
+
+function ex_10_R(num1, num2){
+	vett = [];
+	return replicateRicorsiva(vett, num1, num2);
+}
+
 /*Esercizio 11
 Data una lista di interi A, si riordini gli elementi della lista in modo tale che tutti gli elementi
 dispari precedano nello stesso ordine tutti gli elementi pari.
 */
 function ex_11_I(myArray){
-    for (var i = 0; i < myArray.length; i++){
-        if ((myArray[myArray.length - i] % 2 != 0) && (myArray[myArray.length - i - 1] % 2 == 0)){
-            var app = myArray[myArray.length - i - 1];
-            myArray[myArray.length - i - 1] = myArray[myArray.length - i];
-            myArray[myArray.length - i] = app;
+    vettore = [];
+    vettPari = [];
+    for (i = 0; i < myArray.length; i++){
+        if (myArray[i] % 2 != 0){
+            vettore.push(myArray[i]);
+        } else {
+            vettPari.push(myArray[i]);
         }
     }
-    return myArray;
+    vector = vettore.concat(vettPari);
+    return vector;
+}
+
+function disparipariR(myarray, q, i){	
+	if(myarray.length > 0 && q > i){
+		if(myarray[i] % 2 == 0){
+			myarray.push(myarray[i]);
+			myarray.splice(i,1);
+			q--;
+		}
+		return disparipariR(myarray, q, ++i);
+	}
+	return myarray;
+	
+}
+
+function ex_11_R(myarray){
+	
+	return disparipariR(myarray, myarray.length, 0);
+	
 }
